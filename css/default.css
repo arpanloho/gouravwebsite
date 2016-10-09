@@ -338,19 +338,6 @@ li p { }
 	border-right: 1px solid #a8a8a8;
 }
 
-.stats-tabs li.active_filter{
-    pointer-events: none;
-}
-
-.stats-tabs li.active_filter a {
-    color: #F06000;
-}
-
-.stats-tabs li.active_filter a b {
-    color: #313131;
-    font-weight: bold;
-}
-
 .stats-tabs li:last-child {
 	margin: 0;
 	padding: 0;
@@ -375,6 +362,18 @@ li p { }
    color: #8B9798;
 }
 
+.stats-tabs li.active_filter{
+    pointer-events: none;
+}
+
+.stats-tabs li.active_filter a {
+    color: #F06000;
+}
+
+.stats-tabs li.active_filter a b {
+    color: #313131;
+    font-weight: bold;
+}
 /* definition list */
 dl { margin: 12px 0; }
 dt { margin: 0; color:#11ABB0; }
