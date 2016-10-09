@@ -134,6 +134,31 @@
    });
 
 /*----------------------------------------------------*/
+/*	gallery filtering
+------------------------------------------------------*/
+
+$('#portfolio .stats-tabs li a').on('click',function(event){
+  event.preventDefault();
+  var $link = $(event.currentTarget);
+  var new_filter = $link.data('filter');
+  var $paintings = $('#portfolio .portfolio-item');
+
+  $('.active_filter').removeClass('active_filter');
+  if(new_filter == 'all') {
+    var hidden_paintings = $.grep($paintings,function(painting){ return (!$(painting).is(':visible'));});
+    $(hidden_paintings).toggle('slide');
+  }
+  else{
+    var visible_mismatches = $.grep($paintings,function(painting){ return ($(painting).data('filter')!=new_filter && $(painting).is(':visible'));});
+    $(visible_mismatches).toggle('slide');
+    var hidden_matches = $.grep($paintings,function(painting){ return ($(painting).data('filter')==new_filter && !$(painting).is(':visible'));});
+    $(hidden_matches).toggle('slide');
+  }
+  $link.parent().addClass('active_filter');
+});
+
+
+/*----------------------------------------------------*/
 /*	contact form
 ------------------------------------------------------*/
 
@@ -161,7 +186,7 @@
                $('#image-loader').fadeOut();
                $('#message-warning').hide();
                $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
+               $('#message-success').fadeIn();
             }
             // There was an error
             else {
@@ -178,11 +203,3 @@
 
 
 });
-
-
-
-
-
-
-
-
