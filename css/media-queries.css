@@ -381,6 +381,11 @@
    .stats-tabs li a {
       font-size: 18px;
    }
+
+   .stats-tabs li.active_filter a {
+       color: #11ABB0;
+   }
+
    /* footer
    ------------------------------------------------------------------------ */
 
